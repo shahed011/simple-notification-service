@@ -56,7 +56,7 @@ resource "aws_iam_role" "notification_service_lambda_role" {
 }
 
 resource "aws_iam_role_policy_attachment" "notification_service_lambda_execution_policy_attachment" {
-  role       = aws_iam_role.notification_service_lambda_role.name
+  role       = aws_iam_role.notification_service_lambda_role.id
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaSQSQueueExecutionRole"
 }
 
