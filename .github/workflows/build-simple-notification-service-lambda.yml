@@ -1,33 +1,33 @@
-#name: Build Simple Notification Service Lambda
+name: Build Simple Notification Service Lambda
 
-#on:
-#  push:
-#    branches: [main]
-#    paths:
-#      - 'applications/simple-notification-service/**/*'
-#  pull_request:
-#    branches: [main]
-#    paths:
-#      - 'applications/simple-notification-service/**/*'
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'applications/simple-notification-service/**/*'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'applications/simple-notification-service/**/*'
 
-#defaults:
-#  run:
-#    working-directory: ./applications/simple-notification-service
+defaults:
+  run:
+    working-directory: ./applications/simple-notification-service
 
-#jobs:
-#  Build:
-#    runs-on: ubuntu-latest
-#    timeout-minutes: 5
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
 
-#    steps:
-#      - name: Checkout code
-#        uses: actions/checkout@v3
-#        with:
-#          submodules: 'recursive'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
 
-#      - name: Build
-#        run: dotnet build
+      - name: Build
+        run: dotnet build
 
-#      - name: Test
-#        run: dotnet test
+      - name: Test
+        run: dotnet test
       
