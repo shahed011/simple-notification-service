@@ -42,5 +42,5 @@ jobs:
           aws-region: eu-west-2
 
       - name: Push zip package to lambda infra
-        run: aws lambda update-function-code --function-name  my-function --zip-file fileb://simple-notification-service-lambda.zip
+        run: aws lambda update-function-code --function-name test-function --zip-file fileb://simple-notification-service-lambda.zip
       
