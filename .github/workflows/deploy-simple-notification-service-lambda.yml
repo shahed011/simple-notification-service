@@ -1,4 +1,4 @@
-name: Build Simple Notification Service Lambda
+name: Deploy Simple Notification Service Lambda
 
 on:
   push:
@@ -15,7 +15,7 @@ defaults:
     working-directory: ./applications/simple-notification-service
 
 jobs:
-  Build:
+  Deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
@@ -32,7 +32,7 @@ jobs:
         run: dotnet tool install -g Amazon.Lambda.Tools
 
       - name: Zip package lambda
-        run: dotnet lambda package -c Release -o simple-notification-service-lambda.zip -f net6.0 --msbuild-parameters /p:PublishReadyToRun=true --self-container false
+        run: dotnet lambda package -c Release -o simple-notification-service-lambda.zip -f net6.0 --msbuild-parameters /p:PublishReadyToRun=true --self-container false --project-location ./src/Simple.Notification.Service
 
       - name: Configure AWS credentials from Test account
         uses: aws-actions/configure-aws-credentials@v1
