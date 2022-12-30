@@ -18,6 +18,8 @@ jobs:
   Deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    env:
+      FUNCTION_NAME: simple-notification-service-lambda
 
     steps:
       - name: Checkout code
@@ -32,7 +34,7 @@ jobs:
         run: dotnet tool install -g Amazon.Lambda.Tools
 
       - name: Zip package lambda
-        run: dotnet lambda package -c Release -o simple-notification-service-lambda.zip -f net6.0 --msbuild-parameters /p:PublishReadyToRun=true --self-container false --project-location ./src/Simple.Notification.Service.Lambda
+        run: dotnet lambda package -c Release -o $FUNCTION_NAME.zip -f net6.0 --msbuild-parameters /p:PublishReadyToRun=true --self-container false --project-location ./src/Simple.Notification.Service.Lambda
 
       - name: Configure AWS credentials from Test account
         uses: aws-actions/configure-aws-credentials@v1
@@ -42,5 +44,8 @@ jobs:
           aws-region: eu-west-2
 
       - name: Push zip package to lambda infra
-        run: aws lambda update-function-code --function-name simple-notification-service-lambda --zip-file fileb://simple-notification-service-lambda.zip --region eu-west-2
+        run: aws lambda update-function-code --function-name $FUNCTION_NAME --zip-file fileb://$FUNCTION_NAME.zip --region eu-west-2
+
+      - name: Publish function version
+        run: aws lambda publish-version --function-name $FUNCTION_NAME --description 1.0.0 --region eu-west-2
       
