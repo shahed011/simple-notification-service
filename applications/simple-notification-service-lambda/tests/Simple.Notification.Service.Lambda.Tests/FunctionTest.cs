@@ -1,8 +1,8 @@
-using Xunit;
-using Amazon.Lambda.TestUtilities;
 using Amazon.Lambda.SQSEvents;
+using Amazon.Lambda.TestUtilities;
+using Xunit;
 
-namespace Simple.Notification.Service.Tests;
+namespace Simple.Notification.Service.Lambda.Tests;
 
 public class FunctionTest
 {

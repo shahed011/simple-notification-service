@@ -1,4 +1,4 @@
-cd src/Simple.Notification.Service
+cd src/Simple.Notification.Service.Lambda
 dotnet restore
 dotnet clean
 dotnet build

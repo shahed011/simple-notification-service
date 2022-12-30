@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simple.Notification.Service", "src\Simple.Notification.Service\Simple.Notification.Service.csproj", "{26E47DBE-DE73-4BCD-9919-42112EE87111}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simple.Notification.Service.Lambda", "src\Simple.Notification.Service.Lambda\Simple.Notification.Service.Lambda.csproj", "{26E47DBE-DE73-4BCD-9919-42112EE87111}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simple.Notification.Service.Tests", "tests\Simple.Notification.Service.Tests\Simple.Notification.Service.Tests.csproj", "{FF0C6D4A-97B7-4EDF-B0D1-EC9D995F5AEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simple.Notification.Service.Lambda.Tests", "tests\Simple.Notification.Service.Lambda.Tests\Simple.Notification.Service.Lambda.Tests.csproj", "{FF0C6D4A-97B7-4EDF-B0D1-EC9D995F5AEA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{73615602-0608-47D8-961C-FE244B18F860}"
 	ProjectSection(SolutionItems) = preProject

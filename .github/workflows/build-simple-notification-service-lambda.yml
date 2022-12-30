@@ -4,15 +4,15 @@ on:
   push:
     branches: [main]
     paths:
-      - 'applications/simple-notification-service/**/*'
+      - 'applications/simple-notification-service-lambda/**/*'
   pull_request:
     branches: [main]
     paths:
-      - 'applications/simple-notification-service/**/*'
+      - 'applications/simple-notification-service-lambda/**/*'
 
 defaults:
   run:
-    working-directory: ./applications/simple-notification-service
+    working-directory: ./applications/simple-notification-service-lambda
 
 jobs:
   Build:

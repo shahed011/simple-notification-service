@@ -1,14 +1,14 @@
 using Amazon.Lambda.Core;
 using Amazon.Lambda.Serialization.SystemTextJson;
 using Amazon.Lambda.SQSEvents;
-using Simple.Notification.Service;
+using Simple.Notification.Service.Lambda;
 using System.Text.Json.Serialization;
 
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 [assembly: LambdaSerializer(typeof(SourceGeneratorLambdaJsonSerializer<NotiificationServiceJsonSerializerContext>))]
 
-namespace Simple.Notification.Service;
+namespace Simple.Notification.Service.Lambda;
 
 [JsonSerializable(typeof(SQSEvent))]
 public partial class NotiificationServiceJsonSerializerContext : JsonSerializerContext
