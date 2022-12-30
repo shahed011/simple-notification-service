@@ -1,5 +1,5 @@
 resource "aws_sns_topic" "notification_service_sns" {
-  name            = "simple-notification-service-topic"
+  name = "simple-notification-service-topic"
 
   tags = {
     Name = "simple-notification-service-sns"
