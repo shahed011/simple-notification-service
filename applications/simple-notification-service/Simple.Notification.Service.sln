@@ -10,6 +10,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{73615602-0608-47D8-961C-FE244B18F860}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\.github\workflows\build-simple-notification-service-lambda.yml = ..\..\.github\workflows\build-simple-notification-service-lambda.yml
+		buildlocal.ps1 = buildlocal.ps1
+		..\..\.github\workflows\deploy-simple-notification-service-lambda.yml = ..\..\.github\workflows\deploy-simple-notification-service-lambda.yml
 	EndProjectSection
 EndProject
 Global
