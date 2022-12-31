@@ -1,6 +1,6 @@
 resource "aws_lambda_function" "notification_service_lambda" {
   filename                       = data.archive_file.dummy.output_path
-  function_name                  = "simple-notification-service-lambda"
+  function_name                  = local.lambda_function_name
   role                           = aws_iam_role.notification_service_lambda_role.arn
   handler                        = "Simple.Notification.Service.Lambda::Simple.Notification.Service.Lambda.Function::FunctionHandlerAsync"
   runtime                        = "dotnet6"
@@ -15,7 +15,7 @@ resource "aws_lambda_function" "notification_service_lambda" {
   }
 
   tags = {
-    Name = "simple-notification-service-lambda"
+    Name = local.lambda_function_name
   }
 }
 
@@ -35,7 +35,7 @@ data "archive_file" "dummy" {
 }
 
 resource "aws_iam_role" "notification_service_lambda_role" {
-  name = "simple-notification-service-lambda-role"
+  name = "${local.lambda_function_name}-role"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -51,7 +51,7 @@ resource "aws_iam_role" "notification_service_lambda_role" {
   })
 
   tags = {
-    Name = "simple-notification-service-lambda-role"
+    Name = "${local.lambda_function_name}-role"
   }
 }
 

@@ -1,7 +1,7 @@
 resource "aws_cloudwatch_log_group" "test-log-group" {
-  name = "test-log-group"
+  name = "/aws/lambda/${local.lambda_function_name}"
 
   tags = {
-    Resource = "Test-LogGroup"
+    Name = "simple-notification-service-lambda-log-group"
   }
 }
